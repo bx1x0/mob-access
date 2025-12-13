@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GadgetsGuru | Premium Mobile Accessories</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-weight=%22bold%22 fill=%22%230891b2%22>G</text></svg>">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -15,11 +20,16 @@
         .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .thumb-active { border-color: #0891b2; opacity: 1; }
+        
+        /* Zoom Modal Animation */
+        #zoom-modal { transition: opacity 0.3s ease; }
+        #zoom-modal.hidden { opacity: 0; pointer-events: none; }
+        #zoom-modal.flex { opacity: 1; pointer-events: auto; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <nav class="glass-nav fixed w-full top-0 z-50">
+    <nav class="glass-nav fixed w-full top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -85,42 +95,85 @@
                 <i class="fa-solid fa-bolt text-cyan-500"></i>
                 <span class="font-bold text-xl">GadgetsGuru</span>
             </div>
-            <div class="bg-slate-900 px-6 py-2 rounded-full border border-slate-800 mb-8 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-green-500"></i>
-                <span class="text-slate-300 text-sm font-mono">+92 318 5662650</span>
-            </div>
+            
+            <p class="mb-8 text-center text-sm opacity-70">
+                Premium Mobile Accessories & Gadgets Retailer.<br>Operating across Pakistan.
+            </p>
+
             <div class="flex justify-center gap-8 text-2xl">
                 <a href="https://www.facebook.com/profile.php?id=100075802039131" target="_blank" class="hover:text-cyan-400 transition transform hover:-translate-y-1">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
-                <a href="https://wa.me/923185662650" target="_blank" class="hover:text-green-500 transition transform hover:-translate-y-1">
-                    <i class="fa-brands fa-whatsapp"></i>
+                <a href="https://wa.me/923185662650" target="_blank" class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-500 transition transform hover:-translate-y-1 shadow-lg shadow-green-900/50">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
                 </a>
             </div>
+            
             <p class="mt-8 text-xs opacity-50">&copy; 2026 GadgetsGuru. All rights reserved.</p>
         </div>
     </footer>
+
+    <div id="zoom-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4" onclick="closeZoom()">
+        <div class="relative max-w-4xl w-full max-h-screen flex justify-center">
+            <button class="absolute -top-12 right-0 text-white text-3xl hover:text-cyan-400 transition">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <img id="zoom-img" src="" class="max-h-[85vh] w-auto rounded-lg shadow-2xl object-contain border border-slate-700">
+        </div>
+    </div>
 
     <script>
         const WHATSAPP_NUMBER = "923185662650"; 
 
         const products = [
-            // --- PRODUCTS REQUESTED ---
-            
-            // 1. YSDBBC B5
+            // --- CABLES ---
             {
                 id: 1,
-                name: "YSDBBC B5 Super Bass",
-                price: "450 PKR",
-                category: "Audio",
-                tag: "HiFi Sound",
-                desc: "Ergonomic design with vocal channels. Deep bass response.",
-                images: ["images/b5-box.jpg", "images/b5-real.jpg"]
+                name: "MediaNet MC-98 Type-C Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "Best Copper",
+                desc: "High quality copper core for stable data transmission.",
+                images: ["images/mc98-box.jpg", "images/mc98-back.jpg"] 
             },
-            
-            // 2. Geman GC-11 (67W)
             {
                 id: 2,
+                name: "USB-C to Lightning PD (1m)",
+                price: "420 PKR",
+                category: "Apple Gear",
+                tag: "20W Fast",
+                desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
+                images: ["images/pdl-box.jpg", "images/pdl-cable.jpg"]
+            },
+            {
+                id: 3,
+                name: "Erorex R-16 Type-C Soft Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "3.1A Output",
+                desc: "High-speed charging cable with soft touch finish.",
+                images: ["images/erorex-c.jpg"] 
+            },
+            {
+                id: 4,
+                name: "Erorex R-12 Lightning Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "For iPhone",
+                desc: "Soft data cable compatible with Lightning devices.",
+                images: ["images/erorex-iphone.jpg"]
+            },
+            {
+                id: 5,
+                name: "REMY Micro USB Cable",
+                price: "300 PKR",
+                category: "Cables",
+                tag: "60W Fast",
+                desc: "Super fast cable for Android devices. High compatibility.",
+                images: ["images/remy-micro.jpg"]
+            },
+            {
+                id: 6,
                 name: "Geman GC-11 PD Cable (67W)",
                 price: "450 PKR",
                 category: "Premium Cables",
@@ -129,75 +182,18 @@
                 images: ["images/geman-c.jpg"]
             },
 
-            // 3. Erorex R-12 Lightning
-            {
-                id: 3,
-                name: "Erorex R-12 Lightning Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "For iPhone",
-                desc: "Soft data cable compatible with Lightning devices.",
-                images: ["images/erorex-iphone.jpg"]
-            },
-
-            // 4. Erorex R-16 Type-C
-            {
-                id: 4,
-                name: "Erorex R-16 Type-C Soft Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "3.1A Output",
-                desc: "High-speed charging cable with soft touch finish.",
-                images: ["images/erorex-c.jpg"] 
-            },
-
-            // 5. USB-C to Lightning PD
-            {
-                id: 5,
-                name: "USB-C to Lightning PD (1m)",
-                price: "420 PKR",
-                category: "Apple Gear",
-                tag: "20W Fast",
-                desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
-                images: ["images/pdl-box.jpg", "images/pdl-cable.jpg"]
-            },
-
-            // 6. MediaNet MC-98
-            {
-                id: 6,
-                name: "MediaNet MC-98 Type-C Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "Best Copper",
-                desc: "High quality copper core for stable data transmission.",
-                images: ["images/mc98-box.jpg", "images/mc98-back.jpg"] 
-            },
-
-            // 7. Wireless PW-22
+            // --- HANDSFREE (WIRED) ---
             {
                 id: 7,
-                name: "Wireless Super Bass PW-22",
-                price: "1,500 PKR",
-                category: "Wireless",
-                tag: "Free Case",
-                desc: "14.3mm Titanium driver. Includes free silicone cover.",
-                images: ["images/pw22-buds.jpg"]
+                name: "YSDBBC B5 Super Bass",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "HiFi Sound",
+                desc: "Ergonomic design with vocal channels. Deep bass response.",
+                images: ["images/b5-box.jpg", "images/b5-real.jpg"]
             },
-
-            // 8. Geman GS-07 Buds
             {
                 id: 8,
-                name: "Geman GS-07 Wireless Buds",
-                price: "2,000 PKR",
-                category: "Wireless",
-                tag: "Wireless 5.4",
-                desc: "High capacity battery with deep purple finish. Touch controls.",
-                images: ["images/geman-gs07.jpg"]
-            },
-
-            // --- OTHER ITEMS FROM YOUR LIST ---
-            {
-                id: 9,
                 name: "PAPADA PA201 Earphones",
                 price: "450 PKR",
                 category: "Audio",
@@ -205,13 +201,24 @@
                 desc: "Humanized design. 3.5mm jack. Metallic finish with Super Bass.",
                 images: ["images/papada-box.jpg", "images/papada-real.jpg"]
             },
-             {
+            {
+                id: 9,
+                name: "Erorex Y-03 Earphones",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "Stereo",
+                desc: "Comfortable to wear with multi-device compatibility.",
+                images: ["images/erorex-y03.jpg"]
+            },
+
+            // --- WIRELESS AUDIO & SPEAKERS ---
+            {
                 id: 10,
                 name: "KBroad KTS-2295 Party Speaker",
                 price: "2,200 PKR",
                 category: "Speakers",
                 tag: "Flashlight",
-                desc: "Portable wireless speaker with carry strap and powerful torch light.",
+                desc: "Portable wireless speaker with carry strap and powerful torch light. Big Sound.",
                 images: ["images/kbroad-box.jpg", "images/kbroad-real.jpg"]
             },
             {
@@ -243,15 +250,24 @@
             },
             {
                 id: 14,
+                name: "Geman GS-07 Wireless Buds",
+                price: "2,000 PKR",
+                category: "Wireless",
+                tag: "Wireless 5.4",
+                desc: "High capacity battery with deep purple finish. Touch controls.",
+                images: ["images/geman-gs07.jpg"]
+            },
+            {
+                id: 15,
                 name: "Air31 Crystal Headset",
                 price: "2,000 PKR",
                 category: "Wireless",
                 tag: "Digital Display",
-                desc: "Transparent casing with LED battery display. Noise reduction.",
+                desc: "Transparent casing with LED battery display. Noise reduction technology.",
                 images: ["images/air31-buds.jpg"]
             },
             {
-                id: 15,
+                id: 16,
                 name: "Air39 ENC Wireless Buds",
                 price: "2,000 PKR",
                 category: "Wireless",
@@ -260,31 +276,22 @@
                 images: ["images/air39-buds.jpg"]
             },
             {
-                id: 16,
+                id: 17,
                 name: "AirPods Pro (Premium Replica)",
                 price: "2,500 PKR",
                 category: "Wireless",
                 tag: "ANC Support",
-                desc: "100% Authentic size. Active Noise Cancellation features.",
+                desc: "100% Authentic size. Active Noise Cancellation features. Pop-up window support.",
                 images: ["images/airpods-box.jpg", "images/airpods-open.jpg", "images/airpods-tray.jpg"]
             },
             {
-                id: 17,
-                name: "Erorex Y-03 Earphones",
-                price: "450 PKR",
-                category: "Audio",
-                tag: "Stereo",
-                desc: "Comfortable to wear with multi-device compatibility.",
-                images: ["images/erorex-y03.jpg"]
-            },
-            {
                 id: 18,
-                name: "REMY Micro USB Cable",
-                price: "300 PKR",
-                category: "Cables",
-                tag: "60W Fast",
-                desc: "Super fast cable for Android devices. High compatibility.",
-                images: ["images/remy-micro.jpg"]
+                name: "Wireless Super Bass PW-22",
+                price: "1,500 PKR",
+                category: "Wireless",
+                tag: "Free Case",
+                desc: "14.3mm Titanium driver. Includes free silicone cover.",
+                images: ["images/pw22-buds.jpg"]
             }
         ];
 
@@ -300,14 +307,16 @@
                 tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
 
-            // Image Loading Logic 
+            // Image HTML with OnClick Zoom trigger
             let imageHTML = `
-                <img id="img-${product.id}" src="${product.images[0]}" 
-                     alt="${product.name}" 
-                     loading="eager" 
-                     class="w-full h-full object-contain p-4 transform transition duration-500 hover:scale-105"
-                     onerror="this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Loading...'"
-                >`;
+                <div class="cursor-zoom-in w-full h-full p-4" onclick="openZoom('${product.images[0]}')">
+                    <img id="img-${product.id}" src="${product.images[0]}" 
+                         alt="${product.name}" 
+                         loading="eager" 
+                         class="w-full h-full object-contain transform transition duration-500 hover:scale-105"
+                         onerror="this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Loading...'"
+                    >
+                </div>`;
 
             let thumbnailHTML = '';
             if (product.images.length > 1) {
@@ -350,8 +359,30 @@
             container.appendChild(card);
         });
 
+        // --- FUNCTIONS ---
+
+        // Zoom Functions
+        function openZoom(src) {
+            const modal = document.getElementById('zoom-modal');
+            const zoomImg = document.getElementById('zoom-img');
+            zoomImg.src = src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeZoom() {
+            const modal = document.getElementById('zoom-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Change Slider Image (and update Zoom target)
         window.changeImage = function(id, src, thumb) {
             const mainImg = document.getElementById(`img-${id}`);
+            
+            // Update the click target for zoom
+            mainImg.parentElement.setAttribute('onclick', `openZoom('${src}')`);
+
             mainImg.style.opacity = '0';
             setTimeout(() => {
                 mainImg.src = src;
