@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Custom "Tech" Gradient */
         .tech-gradient {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
         }
@@ -20,12 +19,11 @@
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-microchip text-blue-600 text-2xl"></i>
-                    <span class="font-bold text-xl text-gray-800">TechNest Accessories</span>
+                    <span class="font-bold text-xl text-gray-800">TechNest</span>
                 </div>
                 <div class="hidden md:flex space-x-6 text-gray-600">
                     <a href="#products" class="hover:text-blue-600">Products</a>
-                    <a href="#about" class="hover:text-blue-600">Our Mission</a>
-                    <a href="#contact" class="hover:text-blue-600">Contact</a>
+                    <a href="#about" class="hover:text-blue-600">Mission</a>
                 </div>
             </div>
         </div>
@@ -43,7 +41,6 @@
 
     <section id="products" class="py-16 max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Latest Arrivals</h2>
-        
         <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </section>
@@ -55,17 +52,17 @@
                 <div class="p-6 border border-gray-700 rounded-lg">
                     <i class="fa-solid fa-hand-holding-dollar text-4xl text-green-400 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Zero Markup</h3>
-                    <p class="text-gray-400">We use a zero-overhead model (No Rent) to pass savings to you.</p>
+                    <p class="text-gray-400">Zero-overhead model (No Rent) means lower prices.</p>
                 </div>
                 <div class="p-6 border border-gray-700 rounded-lg">
                     <i class="fa-solid fa-check-double text-4xl text-blue-400 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Tested Quality</h3>
-                    <p class="text-gray-400">Every cable is manually tested by our team before listing.</p>
+                    <p class="text-gray-400">Every cable manually tested before listing.</p>
                 </div>
                 <div class="p-6 border border-gray-700 rounded-lg">
                     <i class="fa-brands fa-whatsapp text-4xl text-green-500 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Direct Support</h3>
-                    <p class="text-gray-400">Instant ordering via WhatsApp. No complex signups.</p>
+                    <p class="text-gray-400">Instant ordering via WhatsApp.</p>
                 </div>
             </div>
         </div>
@@ -77,30 +74,30 @@
 
     <script>
         // --- CONFIGURATION ---
-        const WHATSAPP_NUMBER = "923000000000"; // <--- CHANGE THIS TO YOUR NUMBER (Format: 923...)
+        // Your WhatsApp Number in International Format (No + or 0)
+        const WHATSAPP_NUMBER = "923185662650"; 
         
         // --- PRODUCT DATABASE ---
-        // Add your real products here. Images are placeholders.
         const products = [
             {
                 id: 1,
                 name: "Fast Charging Cable (Type-C)",
                 price: "350 PKR",
-                desc: "Durable braided cable, supports fast charging for Samsung/Xiaomi.",
+                desc: "Durable braided cable, supports fast charging.",
                 image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=500&auto=format&fit=crop&q=60" 
             },
             {
                 id: 2,
                 name: "Wireless Earbuds (Basic)",
                 price: "1,200 PKR",
-                desc: "Great bass, 4-hour battery life. Perfect for students.",
+                desc: "Great bass, 4-hour battery life.",
                 image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=60"
             },
             {
                 id: 3,
                 name: "iPhone Lightning Cable",
                 price: "400 PKR",
-                desc: "High speed data transfer and charging compatible with iPhone X-14.",
+                desc: "High speed data transfer and charging.",
                 image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=500&auto=format&fit=crop&q=60"
             },
             {
@@ -114,7 +111,7 @@
                 id: 5,
                 name: "Gaming Handfree",
                 price: "800 PKR",
-                desc: "Noise cancellation with mic. Good for PUBG/COD.",
+                desc: "Noise cancellation with mic.",
                 image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=500&auto=format&fit=crop&q=60"
             }
         ];
@@ -147,13 +144,8 @@
 
         // --- WHATSAPP LOGIC ---
         function orderItem(name, price) {
-            // Create the message
             const text = `Hello! I saw your website and I want to order: *${name}* for *${price}*. Is it available?`;
-            
-            // Encode for URL
             const encodedText = encodeURIComponent(text);
-            
-            // Open WhatsApp
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
             window.open(url, '_blank');
         }
