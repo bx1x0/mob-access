@@ -136,7 +136,7 @@
         const WHATSAPP_NUMBER = "923185662650"; 
 
         // --- PRODUCT DATABASE ---
-        // Note: Images assume a folder named 'images' exists next to this file.
+        // IMAGES ORDER: [0] is ALWAYS the BOX, [1] is the REAL PRODUCT
         const products = [
             
             // --- WIRELESS AUDIO & SPEAKERS (Premium) ---
@@ -147,7 +147,7 @@
                 category: "Speakers",
                 tag: "Flashlight",
                 desc: "Portable wireless speaker with carry strap and powerful torch light. Big Sound.",
-                images: ["images/kbroad-real.jpg", "images/kbroad-box.jpg"]
+                images: ["images/kbroad-box.jpg", "images/kbroad-real.jpg"]
             },
             {
                 id: 2,
@@ -156,7 +156,7 @@
                 category: "Speakers",
                 tag: "Pocket Size",
                 desc: "Mini portable bluetooth speaker. Metal body with surprising bass.",
-                images: ["images/jbl-real.jpg", "images/jbl-box.jpg"]
+                images: ["images/jbl-box.jpg", "images/jbl-real.jpg"]
             },
              {
                 id: 3,
@@ -165,7 +165,7 @@
                 category: "Speakers",
                 tag: "Metal Body",
                 desc: "Sleek aluminum design with SD card slot and clear audio.",
-                images: ["images/silver-side.jpg", "images/silver-top.jpg", "images/silver-box.jpg"]
+                images: ["images/silver-box.jpg", "images/silver-top.jpg", "images/silver-side.jpg"]
             },
             {
                 id: 4,
@@ -174,7 +174,7 @@
                 category: "Wireless",
                 tag: "Sports",
                 desc: "Magnetic earbuds with long battery life. Perfect for gym and running.",
-                images: ["images/lenovo-real.jpg", "images/lenovo-box.jpg"]
+                images: ["images/lenovo-box.jpg", "images/lenovo-real.jpg"]
             },
             {
                 id: 5,
@@ -326,10 +326,11 @@
             let imageHTML = '';
             let thumbnailHTML = '';
             
-            // Main Image
+            // Main Image (Box - Index 0)
             imageHTML = `
                 <img id="img-${product.id}" src="${product.images[0]}" 
                      alt="${product.name}" 
+                     loading="eager" 
                      class="w-full h-full object-contain p-4 transform transition duration-500 hover:scale-105"
                      onerror="this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Loading...'"
                 >`;
