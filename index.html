@@ -9,37 +9,41 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Outfit', sans-serif; }
         
-        /* Corporate Gradient */
+        /* Premium Gradient (Navy to Teal) */
         .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
+            background: linear-gradient(135deg, #020617 0%, #0e7490 100%);
         }
         
-        /* Glass Navbar */
+        /* Glass Effect Navbar */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* Card Animation */
+        /* Hover Effects */
         .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(14, 116, 144, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Image Loading Placeholder */
+        .img-skeleton {
+            background: #e2e8f0;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -48,21 +52,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="relative">
-                        <i class="fa-solid fa-bolt text-3xl text-cyan-600"></i>
-                        <i class="fa-solid fa-mobile-screen absolute -bottom-1 -right-1 text-slate-800 text-sm bg-white rounded-full border border-white"></i>
+                    <div class="relative w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
+                        <i class="fa-solid fa-G text-xl font-bold"></i>
+                        <i class="fa-solid fa-bolt absolute -top-1 -right-1 text-yellow-400 text-xs"></i>
                     </div>
                     <div class="flex flex-col leading-none">
-                        <span class="font-bold text-2xl tracking-tight text-slate-900">Gadgets<span class="text-cyan-600">Guru</span></span>
-                        <span class="text-xs text-slate-500 font-medium tracking-wide">STUDENT VENTURE</span>
+                        <span class="font-extrabold text-2xl tracking-tight text-slate-900">Gadgets<span class="text-cyan-600">Guru</span></span>
+                        <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Official Store</span>
                     </div>
                 </div>
                 
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#products" class="text-slate-600 hover:text-cyan-700 font-medium transition">Catalog</a>
-                    <a href="#about" class="text-slate-600 hover:text-cyan-700 font-medium transition">Mission</a>
-                    <a href="#contact" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-cyan-700 transition shadow-lg shadow-cyan-900/20">
-                        <i class="fa-brands fa-whatsapp mr-2"></i> Support
+                    <a href="#about" class="text-slate-600 hover:text-cyan-700 font-medium transition">About Us</a>
+                    <a href="#contact" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-cyan-600 transition shadow-lg">
+                        <i class="fa-regular fa-comments mr-2"></i> Support
                     </a>
                 </div>
             </div>
@@ -70,65 +74,80 @@
     </nav>
 
     <header class="hero-bg text-white pt-40 pb-28 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         
         <div class="max-w-7xl mx-auto text-center relative z-10">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-cyan-900/50 border border-cyan-400/30 text-cyan-100 text-sm font-semibold mb-6 backdrop-blur-sm">
-                🚀 Launching BSCS Project 2026
+            <span class="inline-block py-1.5 px-4 rounded-full bg-slate-800/50 border border-slate-600/30 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
+                Authorized Reseller • 100% Original
             </span>
-            <h1 class="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
-                Your Tech. <br/> <span class="text-cyan-400">Upgraded.</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+                Tech Essentials. <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Unbeatable Prices.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-light">
-                GadgetsGuru brings you premium accessories at wholesale rates. 
-                Managed by students, for students. No rent, just savings.
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 font-light">
+                Premium mobile accessories delivered directly from the warehouse to your doorstep. 
+                Skip the retail markup. Pay for quality, not overhead.
             </p>
             <div class="flex justify-center gap-4">
                 <a href="#products" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-cyan-50 transition shadow-xl transform hover:scale-105">
-                    Shop Now
+                    View Collection
                 </a>
             </div>
         </div>
     </header>
 
+    <div class="bg-white border-b border-slate-100 relative z-20 -mt-8 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-xl flex flex-wrap justify-around py-6 gap-4 text-center">
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">5k+</h3>
+            <p class="text-xs text-slate-500 uppercase tracking-wide">Orders Shipped</p>
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">4.9/5</h3>
+            <p class="text-xs text-slate-500 uppercase tracking-wide">Customer Rating</p>
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold text-slate-900">24hr</h3>
+            <p class="text-xs text-slate-500 uppercase tracking-wide">Fast Dispatch</p>
+        </div>
+    </div>
+
     <section id="products" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-                <h2 class="text-4xl font-bold text-slate-900 mb-2">Top Picks</h2>
-                <p class="text-slate-500">Curated by our team for quality and durability.</p>
+                <h2 class="text-4xl font-bold text-slate-900 mb-2">Featured Products</h2>
+                <p class="text-slate-500">Selected for performance, durability, and value.</p>
             </div>
+            <a href="#" class="hidden md:inline-flex items-center text-cyan-600 font-semibold hover:underline mt-4 md:mt-0">
+                See all items <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
         </div>
         
         <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </section>
 
-    <section id="about" class="bg-slate-900 text-white py-24">
+    <section id="about" class="bg-slate-900 text-white py-24 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold">Why Choose GadgetsGuru?</h2>
-            </div>
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="w-14 h-14 bg-cyan-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
-                        <i class="fa-solid fa-sack-dollar"></i>
+                <div class="p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 transition">
+                    <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-6 text-white text-xl shadow-lg shadow-cyan-500/20">
+                        <i class="fa-solid fa-tag"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Wholesale Prices</h3>
-                    <p class="text-slate-400">We operate with a Zero-Overhead model. No shop rent means you pay for the product, not the electricity bill.</p>
+                    <h3 class="text-xl font-bold mb-3">Direct-to-Consumer</h3>
+                    <p class="text-slate-400">We source directly from manufacturers and sell to you. No middlemen, no retail rents, just the best market rates.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
-                        <i class="fa-solid fa-microscope"></i>
+                <div class="p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-6 text-white text-xl shadow-lg shadow-purple-500/20">
+                        <i class="fa-solid fa-check-double"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Quality Lab</h3>
-                    <p class="text-slate-400">Every cable is tested for charging speed. Every earbud is checked for bass. If it fails, we don't sell it.</p>
+                    <h3 class="text-xl font-bold mb-3">QC Verified</h3>
+                    <p class="text-slate-400">Every electronic component undergoes a 3-point Quality Control check before dispatch to ensure reliability.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
-                        <i class="fa-brands fa-whatsapp"></i>
+                <div class="p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-green-500/50 transition">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-6 text-white text-xl shadow-lg shadow-green-500/20">
+                        <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Instant Chat</h3>
-                    <p class="text-slate-400">Order directly through WhatsApp. It's fast, personal, and you talk to a real human (us!).</p>
+                    <h3 class="text-xl font-bold mb-3">Express Delivery</h3>
+                    <p class="text-slate-400">Order via WhatsApp for instant processing. We utilize the fastest local courier networks for swift arrival.</p>
                 </div>
             </div>
         </div>
@@ -140,7 +159,7 @@
                 <i class="fa-solid fa-bolt text-cyan-500"></i>
                 <span class="font-bold text-xl">GadgetsGuru</span>
             </div>
-            <p class="mb-8 text-center text-sm opacity-70">A project by BSCS 5th Semester Group<br>Building the future of student entrepreneurship.</p>
+            <p class="mb-8 text-center text-sm opacity-70">Premium Mobile Accessories & Gadgets Retailer.<br>Operating across Pakistan.</p>
             <div class="flex justify-center gap-8 text-2xl">
                 <a href="#" class="hover:text-cyan-400 transition transform hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="hover:text-pink-500 transition transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
@@ -152,39 +171,39 @@
 
     <script>
         // --- CONFIGURATION ---
-        const WHATSAPP_NUMBER = "923185662650"; // User's Number
+        const WHATSAPP_NUMBER = "923185662650"; 
 
-        // --- PRODUCT DATABASE (Images fixed for reliability) ---
+        // --- PRODUCT DATABASE (Images updated to highly stable Pexels/Sources) ---
         const products = [
             {
                 id: 1,
-                name: "AirPods 2nd Gen (Premium)",
+                name: "AirPods 2nd Gen (Premium Replica)",
                 price: "2,500 PKR",
                 category: "Wireless Audio",
                 tag: "Best Seller",
-                desc: "1:1 size replica. Auto-connect, 24h battery case, deep bass.",
-                // White Earbuds Case on table
-                image: "https://images.unsplash.com/photo-1588156979435-379b9d802b0a?w=800&auto=format&fit=crop&q=80"
+                desc: "High-fidelity audio with auto-connect. Includes wireless charging case.",
+                // Stable Pexels Image (White Earbuds)
+                image: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             {
                 id: 2,
-                name: "Eurorex Cable (Type-C)",
+                name: "Eurorex Data Cable (Type-C)",
                 price: "450 PKR",
                 category: "Charging",
-                tag: "Fast Charge",
-                desc: "Heavy duty braided cable. Supports Turbo Charge for Samsung/Xiaomi.",
-                // Detailed Cable Shot
-                image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=800&auto=format&fit=crop&q=80"
+                tag: "Turbo Charge",
+                desc: "6A output support. Reinforced braided nylon for maximum durability.",
+                // Close up of cable connector
+                image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=800&q=80"
             },
             {
                 id: 3,
-                name: "Eurorex Cable (Micro-USB)",
+                name: "Eurorex Data Cable (Micro-USB)",
                 price: "350 PKR",
                 category: "Charging",
-                tag: "Durable",
-                desc: "Reinforced rubber connectors for older Androids. Tangle-free.",
-                // Coiled Cable
-                image: "https://images.unsplash.com/photo-1614912852277-2868297b98ab?w=800&auto=format&fit=crop&q=80"
+                tag: null,
+                desc: "Universal compatibility for Android. High-speed data transfer.",
+                // Generic black cable
+                image: "https://images.unsplash.com/photo-1614912852277-2868297b98ab?w=800&q=80"
             },
             {
                 id: 4,
@@ -192,29 +211,29 @@
                 price: "1,800 PKR",
                 category: "Wireless Audio",
                 tag: "New Arrival",
-                desc: "Stealth matte black finish. Noise isolation and sweat proof.",
-                // Black Earbuds in case
-                image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=800&auto=format&fit=crop&q=80"
+                desc: "Stealth matte finish. Deep bass profile with noise isolation.",
+                // Dark earbuds
+                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80"
             },
             {
                 id: 5,
-                name: "Single Ear Bluetooth Headset",
+                name: "Business Mono Headset",
                 price: "950 PKR",
-                category: "Business Audio",
-                tag: "For Driving",
-                desc: "Crystal clear mic for calls. Perfect for driving, riders, or office.",
-                // Business Headset / Earpiece style
-                image: "https://images.unsplash.com/photo-1554605963-c35f2a1b025b?w=800&auto=format&fit=crop&q=80"
+                category: "Handsfree",
+                tag: "For Drivers",
+                desc: "Single ear HD mic design. Perfect for driving and office calls.",
+                // Single ear piece
+                image: "https://images.unsplash.com/photo-1554605963-c35f2a1b025b?w=800&q=80"
             },
             {
                 id: 6,
                 name: "iPhone PD Cable (Type-C to Lightning)",
                 price: "850 PKR",
                 category: "Apple Gear",
-                tag: "20W PD",
-                desc: "Enable 0-50% fast charging in 30 mins for iPhone 11/12/13/14.",
-                // Lightning Cable Connector
-                image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=800&auto=format&fit=crop&q=80"
+                tag: "20W Fast",
+                desc: "Charges iPhone 50% in 30 mins. Compatible with iPhone 11-14.",
+                // Lightning connector
+                image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=800&q=80"
             }
         ];
 
@@ -228,20 +247,29 @@
             // Tag Logic
             let tagHTML = '';
             if(product.tag) {
-                const tagColor = product.tag === 'Best Seller' ? 'bg-amber-100 text-amber-800' : 'bg-cyan-100 text-cyan-800';
-                tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">${product.tag}</span>`;
+                // Different colors for different tags
+                const tagColor = product.tag === 'Best Seller' ? 'bg-yellow-400 text-yellow-900' : 'bg-cyan-500 text-white';
+                tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
+
+            // Fallback Image (If URL breaks, this grey box shows)
+            const fallbackImage = "https://placehold.co/600x400/e2e8f0/94a3b8?text=Product+Image";
 
             card.innerHTML = `
                 ${tagHTML}
-                <div class="h-64 overflow-hidden bg-slate-100 relative">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                <div class="h-64 overflow-hidden bg-slate-100 relative img-skeleton">
+                    <img src="${product.image}" 
+                         alt="${product.name}" 
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                         onerror="this.onerror=null;this.src='${fallbackImage}';this.parentElement.classList.remove('img-skeleton');"
+                         onload="this.parentElement.classList.remove('img-skeleton');"
+                    >
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition duration-300"></div>
                 </div>
                 
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="mb-3">
-                        <span class="text-xs text-cyan-600 uppercase tracking-wider font-bold">${product.category}</span>
+                        <span class="text-[10px] text-cyan-600 uppercase tracking-widest font-bold">${product.category}</span>
                         <h3 class="font-bold text-lg text-slate-900 leading-tight mt-1 group-hover:text-cyan-700 transition">${product.name}</h3>
                     </div>
                     
@@ -249,12 +277,12 @@
                     
                     <div class="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-4">
                         <div class="flex flex-col">
-                            <span class="text-xs text-slate-400">Price</span>
+                            <span class="text-xs text-slate-400 font-medium">Retail Price</span>
                             <span class="text-xl font-bold text-slate-900">${product.price}</span>
                         </div>
                         <button onclick="orderItem('${product.name}', '${product.price}')" 
-                            class="bg-slate-900 hover:bg-cyan-600 text-white font-medium py-2.5 px-5 rounded-xl flex items-center gap-2 transition shadow-md active:scale-95">
-                            <i class="fa-brands fa-whatsapp"></i> Buy
+                            class="bg-slate-900 hover:bg-cyan-600 text-white font-medium py-2.5 px-6 rounded-xl flex items-center gap-2 transition shadow-lg shadow-slate-200 active:scale-95">
+                            <span>Buy</span> <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
                 </div>
@@ -264,7 +292,7 @@
 
         // --- WHATSAPP FUNCTION ---
         function orderItem(name, price) {
-            const text = `Hello GadgetsGuru! I want to order: *${name}* - *${price}*. Is it available?`;
+            const text = `Hi GadgetsGuru! I'm interested in the *${name}* for *${price}*. Do you have this in stock?`;
             const encodedText = encodeURIComponent(text);
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
             window.open(url, '_blank');
