@@ -37,7 +37,7 @@
         
         /* Thumbnail Active State */
         .thumb-active {
-            border-color: #0891b2; /* Cyan-600 */
+            border-color: #0891b2; 
             opacity: 1;
         }
     </style>
@@ -60,7 +60,6 @@
                 
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#products" class="text-slate-600 hover:text-cyan-700 font-medium transition">Catalog</a>
-                    <a href="#about" class="text-slate-600 hover:text-cyan-700 font-medium transition">About Us</a>
                     <a href="#contact" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-cyan-600 transition shadow-lg">
                         <i class="fa-regular fa-comments mr-2"></i> Support
                     </a>
@@ -139,68 +138,173 @@
         // --- PRODUCT DATABASE ---
         // Note: Images assume a folder named 'images' exists next to this file.
         const products = [
+            
+            // --- WIRELESS AUDIO & SPEAKERS (Premium) ---
             {
                 id: 1,
-                name: "YSDBBC Super Bass Earphones (B5)",
-                price: "450 PKR",
-                category: "Audio",
-                tag: "Super Bass",
-                desc: "HiFi sound with vocal channels. Ergonomic design with deep bass response.",
-                images: ["images/b5-box.jpg", "images/b5-real.jpg"] // Slider Images
+                name: "KBroad KTS-2295 Party Speaker",
+                price: "2,200 PKR",
+                category: "Speakers",
+                tag: "Flashlight",
+                desc: "Portable wireless speaker with carry strap and powerful torch light. Big Sound.",
+                images: ["images/kbroad-real.jpg", "images/kbroad-box.jpg"]
             },
             {
                 id: 2,
-                name: "MediaNet Type-C Data Cable",
+                name: "JBL M3-T Mini Speaker",
+                price: "650 PKR",
+                category: "Speakers",
+                tag: "Pocket Size",
+                desc: "Mini portable bluetooth speaker. Metal body with surprising bass.",
+                images: ["images/jbl-real.jpg", "images/jbl-box.jpg"]
+            },
+             {
+                id: 3,
+                name: "Music Mini Speaker (Silver)",
+                price: "650 PKR",
+                category: "Speakers",
+                tag: "Metal Body",
+                desc: "Sleek aluminum design with SD card slot and clear audio.",
+                images: ["images/silver-side.jpg", "images/silver-top.jpg", "images/silver-box.jpg"]
+            },
+            {
+                id: 4,
+                name: "Lenovo Hanging Neckband",
+                price: "800 PKR",
+                category: "Wireless",
+                tag: "Sports",
+                desc: "Magnetic earbuds with long battery life. Perfect for gym and running.",
+                images: ["images/lenovo-real.jpg", "images/lenovo-box.jpg"]
+            },
+            {
+                id: 5,
+                name: "Geman GS-07 Wireless Buds",
+                price: "2,000 PKR",
+                category: "Wireless",
+                tag: "Wireless 5.4",
+                desc: "High capacity battery with deep purple finish. Touch controls.",
+                images: ["images/geman-buds.jpg"]
+            },
+            {
+                id: 6,
+                name: "Air31 Crystal Headset",
+                price: "2,000 PKR",
+                category: "Wireless",
+                tag: "Digital Display",
+                desc: "Transparent casing with LED battery display. Noise reduction technology.",
+                images: ["images/air31-buds.jpg"]
+            },
+            {
+                id: 7,
+                name: "Air39 ENC Wireless Buds",
+                price: "2,000 PKR",
+                category: "Wireless",
+                tag: "ENC Mic",
+                desc: "Transparent black design with Environmental Noise Cancellation.",
+                images: ["images/air39-buds.jpg"]
+            },
+            {
+                id: 8,
+                name: "AirPods Pro (Premium Replica)",
+                price: "2,500 PKR",
+                category: "Wireless",
+                tag: "ANC Support",
+                desc: "100% Authentic size. Active Noise Cancellation features. Pop-up window support.",
+                images: ["images/airpods-box.jpg", "images/airpods-real.jpg"]
+            },
+            {
+                id: 9,
+                name: "Wireless Super Bass PW-22",
+                price: "1,500 PKR",
+                category: "Wireless",
+                tag: "Free Case",
+                desc: "14.3mm Titanium driver. Includes free silicone cover.",
+                images: ["images/pw22-box.jpg", "images/pw22-real.jpg"]
+            },
+
+            // --- CABLES ---
+            {
+                id: 10,
+                name: "MediaNet MC-98 Type-C Cable",
                 price: "350 PKR",
                 category: "Cables",
                 tag: "Best Copper",
-                desc: "MC-98 Model. Anti-knotted design with fast transmission and super compatibility.",
-                images: ["images/mc98-box.jpg", "images/mc98-back.jpg"] // Slider Images
+                desc: "High quality copper core for stable data transmission.",
+                images: ["images/medianet-box.jpg", "images/medianet-back.jpg"] 
             },
             {
-                id: 3,
+                id: 11,
+                name: "USB-C to Lightning PD (1m)",
+                price: "420 PKR",
+                category: "Apple Gear",
+                tag: "20W Fast",
+                desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
+                images: ["images/apple-pd-box.jpg", "images/apple-pd-real.jpg"]
+            },
+            {
+                id: 12,
                 name: "Erorex R-16 Type-C Soft Cable",
                 price: "350 PKR",
                 category: "Cables",
                 tag: "3.1A Output",
-                desc: "Soft silicone coating. High-speed 3.1A charging with security protection.",
-                images: ["images/erorex-c.jpg"] 
+                desc: "High-speed charging cable with soft touch finish.",
+                images: ["images/erorex-r16.jpg"] 
             },
             {
-                id: 4,
+                id: 13,
                 name: "Erorex R-12 Lightning Cable",
                 price: "350 PKR",
                 category: "Cables",
                 tag: "For iPhone",
-                desc: "Soft touch data cable for Lightning devices. 3.1A fast charging support.",
-                images: ["images/erorex-iphone.jpg"]
+                desc: "Soft data cable compatible with Lightning devices.",
+                images: ["images/erorex-r12.jpg"]
             },
             {
-                id: 5,
-                name: "USB-C to Lightning (PD 1m)",
-                price: "420 PKR",
-                category: "Apple Gear",
-                tag: "PD Fast Charge",
-                desc: "1 meter cable for iPhone 11/12/13/14. Supports fast charging from 0-50% in 30 mins.",
-                images: ["images/pdl-box.jpg", "images/pdl-cable.jpg"] // Slider Images
-            },
-            {
-                id: 6,
-                name: "Geman GC-11 Type-C to Type-C",
-                price: "450 PKR",
-                category: "Premium Cables",
-                tag: "67W Braided",
-                desc: "Nylon braided heavy duty cable. Supports 67W fast charging for laptops and Samsung.",
-                images: ["images/geman-c.jpg"]
-            },
-            {
-                id: 7,
-                name: "REMY Micro USB Fast Cable",
+                id: 14,
+                name: "REMY Micro USB Cable",
                 price: "300 PKR",
                 category: "Cables",
-                tag: "60W / 6A",
-                desc: "Model C-002. Super fast charging for Android. 1000mm length with durable design.",
+                tag: "60W Fast",
+                desc: "Super fast cable for Android devices. High compatibility.",
                 images: ["images/remy-micro.jpg"]
+            },
+            {
+                id: 15,
+                name: "Geman GC-11 PD Cable (67W)",
+                price: "450 PKR",
+                category: "Premium Cables",
+                tag: "Braided",
+                desc: "Type-C to Type-C. Supports 67W fast charging for laptops.",
+                images: ["images/geman-67w.jpg"]
+            },
+
+            // --- HANDSFREE (WIRED) ---
+            {
+                id: 16,
+                name: "YSDBBC B5 Super Bass",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "HiFi Sound",
+                desc: "Ergonomic design with vocal channels. Deep bass response.",
+                images: ["images/ysdbbc-box.jpg", "images/ysdbbc-real.jpg"]
+            },
+            {
+                id: 17,
+                name: "PAPADA PA201 Earphones",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "Hi-Res Audio",
+                desc: "Humanized design. 3.5mm jack. Metallic finish with Super Bass.",
+                images: ["images/papada-box.jpg", "images/papada-real.jpg"]
+            },
+            {
+                id: 18,
+                name: "Erorex Y-03 Earphones",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "Stereo",
+                desc: "Comfortable to wear with multi-device compatibility.",
+                images: ["images/erorex-y03.jpg"]
             }
         ];
 
@@ -214,7 +318,7 @@
             // Tag Logic
             let tagHTML = '';
             if(product.tag) {
-                const tagColor = product.tag.includes('Bass') || product.tag.includes('PD') ? 'bg-cyan-500 text-white' : 'bg-slate-800 text-white';
+                const tagColor = product.tag.includes('Fast') || product.tag.includes('PD') ? 'bg-cyan-500 text-white' : 'bg-slate-800 text-white';
                 tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
 
@@ -276,9 +380,7 @@
 
         // --- FUNCTIONS ---
         
-        // Change Image Function (For Slider)
         window.changeImage = function(id, src, thumb) {
-            // Update Main Image
             const mainImg = document.getElementById(`img-${id}`);
             mainImg.style.opacity = '0';
             setTimeout(() => {
@@ -286,7 +388,6 @@
                 mainImg.style.opacity = '1';
             }, 150);
 
-            // Update Thumbnail Borders
             const parent = thumb.parentNode;
             Array.from(parent.children).forEach(child => {
                 child.classList.remove('border-cyan-500');
@@ -296,7 +397,6 @@
             thumb.classList.add('border-cyan-500');
         }
 
-        // WhatsApp Function
         function orderItem(name, price) {
             const text = `Hi GadgetsGuru! I'm interested in the *${name}* for *${price}*. Do you have this in stock?`;
             const encodedText = encodeURIComponent(text);
