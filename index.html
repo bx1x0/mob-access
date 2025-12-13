@@ -105,80 +105,99 @@
         const WHATSAPP_NUMBER = "923185662650"; 
 
         const products = [
-            // --- CABLES ---
+            // --- PRODUCTS REQUESTED ---
+            
+            // 1. YSDBBC B5
             {
                 id: 1,
-                name: "MediaNet MC-98 Type-C Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "Best Copper",
-                desc: "High quality copper core for stable data transmission.",
-                // Updated to match screenshot names
-                images: ["images/mc98-box.jpg", "images/mc98-back.jpg"] 
-            },
-            {
-                id: 2,
-                name: "USB-C to Lightning PD (1m)",
-                price: "420 PKR",
-                category: "Apple Gear",
-                tag: "20W Fast",
-                desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
-                // Updated to match screenshot names
-                images: ["images/pdl-box.jpg", "images/pdl-cable.jpg"]
-            },
-            {
-                id: 3,
-                name: "Erorex R-16 Type-C Soft Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "3.1A Output",
-                desc: "High-speed charging cable with soft touch finish.",
-                // Updated to match screenshot names
-                images: ["images/erorex-c.jpg"] 
-            },
-            {
-                id: 4,
-                name: "Erorex R-12 Lightning Cable",
-                price: "350 PKR",
-                category: "Cables",
-                tag: "For iPhone",
-                desc: "Soft data cable compatible with Lightning devices.",
-                // Updated to match screenshot names
-                images: ["images/erorex-iphone.jpg"]
-            },
-            {
-                id: 5,
-                name: "REMY Micro USB Cable",
-                price: "300 PKR",
-                category: "Cables",
-                tag: "60W Fast",
-                desc: "Super fast cable for Android devices. High compatibility.",
-                images: ["images/remy-micro.jpg"]
-            },
-            {
-                id: 6,
-                name: "Geman GC-11 PD Cable (67W)",
-                price: "450 PKR",
-                category: "Premium Cables",
-                tag: "Braided",
-                desc: "Type-C to Type-C. Supports 67W fast charging for laptops.",
-                // Updated to match screenshot names
-                images: ["images/geman-c.jpg"]
-            },
-
-            // --- HANDSFREE (WIRED) ---
-            {
-                id: 7,
                 name: "YSDBBC B5 Super Bass",
                 price: "450 PKR",
                 category: "Audio",
                 tag: "HiFi Sound",
                 desc: "Ergonomic design with vocal channels. Deep bass response.",
-                // Updated to match screenshot names
                 images: ["images/b5-box.jpg", "images/b5-real.jpg"]
             },
+            
+            // 2. Geman GC-11 (67W)
+            {
+                id: 2,
+                name: "Geman GC-11 PD Cable (67W)",
+                price: "450 PKR",
+                category: "Premium Cables",
+                tag: "Braided",
+                desc: "Type-C to Type-C. Supports 67W fast charging for laptops.",
+                images: ["images/geman-c.jpg"]
+            },
+
+            // 3. Erorex R-12 Lightning
+            {
+                id: 3,
+                name: "Erorex R-12 Lightning Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "For iPhone",
+                desc: "Soft data cable compatible with Lightning devices.",
+                images: ["images/erorex-iphone.jpg"]
+            },
+
+            // 4. Erorex R-16 Type-C
+            {
+                id: 4,
+                name: "Erorex R-16 Type-C Soft Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "3.1A Output",
+                desc: "High-speed charging cable with soft touch finish.",
+                images: ["images/erorex-c.jpg"] 
+            },
+
+            // 5. USB-C to Lightning PD
+            {
+                id: 5,
+                name: "USB-C to Lightning PD (1m)",
+                price: "420 PKR",
+                category: "Apple Gear",
+                tag: "20W Fast",
+                desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
+                images: ["images/pdl-box.jpg", "images/pdl-cable.jpg"]
+            },
+
+            // 6. MediaNet MC-98
+            {
+                id: 6,
+                name: "MediaNet MC-98 Type-C Cable",
+                price: "350 PKR",
+                category: "Cables",
+                tag: "Best Copper",
+                desc: "High quality copper core for stable data transmission.",
+                images: ["images/mc98-box.jpg", "images/mc98-back.jpg"] 
+            },
+
+            // 7. Wireless PW-22
+            {
+                id: 7,
+                name: "Wireless Super Bass PW-22",
+                price: "1,500 PKR",
+                category: "Wireless",
+                tag: "Free Case",
+                desc: "14.3mm Titanium driver. Includes free silicone cover.",
+                images: ["images/pw22-buds.jpg"]
+            },
+
+            // 8. Geman GS-07 Buds
             {
                 id: 8,
+                name: "Geman GS-07 Wireless Buds",
+                price: "2,000 PKR",
+                category: "Wireless",
+                tag: "Wireless 5.4",
+                desc: "High capacity battery with deep purple finish. Touch controls.",
+                images: ["images/geman-gs07.jpg"]
+            },
+
+            // --- OTHER ITEMS FROM YOUR LIST ---
+            {
+                id: 9,
                 name: "PAPADA PA201 Earphones",
                 price: "450 PKR",
                 category: "Audio",
@@ -186,24 +205,13 @@
                 desc: "Humanized design. 3.5mm jack. Metallic finish with Super Bass.",
                 images: ["images/papada-box.jpg", "images/papada-real.jpg"]
             },
-            {
-                id: 9,
-                name: "Erorex Y-03 Earphones",
-                price: "450 PKR",
-                category: "Audio",
-                tag: "Stereo",
-                desc: "Comfortable to wear with multi-device compatibility.",
-                images: ["images/erorex-y03.jpg"]
-            },
-
-            // --- WIRELESS AUDIO & SPEAKERS ---
-            {
+             {
                 id: 10,
                 name: "KBroad KTS-2295 Party Speaker",
                 price: "2,200 PKR",
                 category: "Speakers",
                 tag: "Flashlight",
-                desc: "Portable wireless speaker with carry strap and powerful torch light. Big Sound.",
+                desc: "Portable wireless speaker with carry strap and powerful torch light.",
                 images: ["images/kbroad-box.jpg", "images/kbroad-real.jpg"]
             },
             {
@@ -235,25 +243,15 @@
             },
             {
                 id: 14,
-                name: "Geman GS-07 Wireless Buds",
-                price: "2,000 PKR",
-                category: "Wireless",
-                tag: "Wireless 5.4",
-                desc: "High capacity battery with deep purple finish. Touch controls.",
-                // Updated to match screenshot names
-                images: ["images/geman-gs07.jpg"]
-            },
-            {
-                id: 15,
                 name: "Air31 Crystal Headset",
                 price: "2,000 PKR",
                 category: "Wireless",
                 tag: "Digital Display",
-                desc: "Transparent casing with LED battery display. Noise reduction technology.",
+                desc: "Transparent casing with LED battery display. Noise reduction.",
                 images: ["images/air31-buds.jpg"]
             },
             {
-                id: 16,
+                id: 15,
                 name: "Air39 ENC Wireless Buds",
                 price: "2,000 PKR",
                 category: "Wireless",
@@ -262,23 +260,31 @@
                 images: ["images/air39-buds.jpg"]
             },
             {
-                id: 17,
+                id: 16,
                 name: "AirPods Pro (Premium Replica)",
                 price: "2,500 PKR",
                 category: "Wireless",
                 tag: "ANC Support",
-                desc: "100% Authentic size. Active Noise Cancellation features. Pop-up window support.",
+                desc: "100% Authentic size. Active Noise Cancellation features.",
                 images: ["images/airpods-box.jpg", "images/airpods-open.jpg", "images/airpods-tray.jpg"]
             },
             {
+                id: 17,
+                name: "Erorex Y-03 Earphones",
+                price: "450 PKR",
+                category: "Audio",
+                tag: "Stereo",
+                desc: "Comfortable to wear with multi-device compatibility.",
+                images: ["images/erorex-y03.jpg"]
+            },
+            {
                 id: 18,
-                name: "Wireless Super Bass PW-22",
-                price: "1,500 PKR",
-                category: "Wireless",
-                tag: "Free Case",
-                desc: "14.3mm Titanium driver. Includes free silicone cover.",
-                // Updated to match screenshot (no pw22-box.jpg in screenshot)
-                images: ["images/pw22-buds.jpg"]
+                name: "REMY Micro USB Cable",
+                price: "300 PKR",
+                category: "Cables",
+                tag: "60W Fast",
+                desc: "Super fast cable for Android devices. High compatibility.",
+                images: ["images/remy-micro.jpg"]
             }
         ];
 
@@ -294,11 +300,8 @@
                 tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
 
-            let imageHTML = '';
-            let thumbnailHTML = '';
-            
-            // Image Loading Logic with specific file names
-            imageHTML = `
+            // Image Loading Logic 
+            let imageHTML = `
                 <img id="img-${product.id}" src="${product.images[0]}" 
                      alt="${product.name}" 
                      loading="eager" 
@@ -306,6 +309,7 @@
                      onerror="this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Loading...'"
                 >`;
 
+            let thumbnailHTML = '';
             if (product.images.length > 1) {
                 let thumbs = '';
                 product.images.forEach((img, index) => {
