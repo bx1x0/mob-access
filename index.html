@@ -97,12 +97,12 @@
 
     <div class="bg-white border-b border-slate-100 relative z-20 -mt-8 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-xl flex flex-wrap justify-around py-6 gap-4 text-center">
         <div>
-            <h3 class="text-2xl font-bold text-slate-900">5k+</h3>
-            <p class="text-xs text-slate-500 uppercase tracking-wide">Orders Shipped</p>
+            <h3 class="text-2xl font-bold text-slate-900">0</h3>
+            <p class="text-xs text-slate-500 uppercase tracking-wide">Returns</p>
         </div>
         <div>
-            <h3 class="text-2xl font-bold text-slate-900">4.9/5</h3>
-            <p class="text-xs text-slate-500 uppercase tracking-wide">Customer Rating</p>
+            <h3 class="text-2xl font-bold text-slate-900">0</h3>
+            <p class="text-xs text-slate-500 uppercase tracking-wide">Hidden Fees</p>
         </div>
         <div>
             <h3 class="text-2xl font-bold text-slate-900">24hr</h3>
@@ -159,12 +159,25 @@
                 <i class="fa-solid fa-bolt text-cyan-500"></i>
                 <span class="font-bold text-xl">GadgetsGuru</span>
             </div>
-            <p class="mb-8 text-center text-sm opacity-70">Premium Mobile Accessories & Gadgets Retailer.<br>Operating across Pakistan.</p>
-            <div class="flex justify-center gap-8 text-2xl">
-                <a href="#" class="hover:text-cyan-400 transition transform hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-pink-500 transition transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-green-500 transition transform hover:-translate-y-1"><i class="fa-brands fa-whatsapp"></i></a>
+            
+            <p class="mb-4 text-center text-sm opacity-70">
+                Premium Mobile Accessories & Gadgets Retailer.<br>Operating across Pakistan.
+            </p>
+            
+            <div class="bg-slate-900 px-6 py-2 rounded-full border border-slate-800 mb-8 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-green-500"></i>
+                <span class="text-slate-300 text-sm font-mono">+92 318 5662650</span>
             </div>
+
+            <div class="flex justify-center gap-8 text-2xl">
+                <a href="https://www.facebook.com/profile.php?id=100075802039131" target="_blank" class="hover:text-cyan-400 transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/923185662650" target="_blank" class="hover:text-green-500 transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            
             <p class="mt-8 text-xs opacity-50">&copy; 2026 GadgetsGuru. All rights reserved.</p>
         </div>
     </footer>
@@ -173,7 +186,7 @@
         // --- CONFIGURATION ---
         const WHATSAPP_NUMBER = "923185662650"; 
 
-        // --- PRODUCT DATABASE (Images updated to highly stable Pexels/Sources) ---
+        // --- PRODUCT DATABASE ---
         const products = [
             {
                 id: 1,
@@ -182,7 +195,6 @@
                 category: "Wireless Audio",
                 tag: "Best Seller",
                 desc: "High-fidelity audio with auto-connect. Includes wireless charging case.",
-                // Stable Pexels Image (White Earbuds)
                 image: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=800"
             },
             {
@@ -192,7 +204,6 @@
                 category: "Charging",
                 tag: "Turbo Charge",
                 desc: "6A output support. Reinforced braided nylon for maximum durability.",
-                // Close up of cable connector
                 image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=800&q=80"
             },
             {
@@ -202,7 +213,6 @@
                 category: "Charging",
                 tag: null,
                 desc: "Universal compatibility for Android. High-speed data transfer.",
-                // Generic black cable
                 image: "https://images.unsplash.com/photo-1614912852277-2868297b98ab?w=800&q=80"
             },
             {
@@ -212,7 +222,6 @@
                 category: "Wireless Audio",
                 tag: "New Arrival",
                 desc: "Stealth matte finish. Deep bass profile with noise isolation.",
-                // Dark earbuds
                 image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80"
             },
             {
@@ -222,7 +231,6 @@
                 category: "Handsfree",
                 tag: "For Drivers",
                 desc: "Single ear HD mic design. Perfect for driving and office calls.",
-                // Single ear piece
                 image: "https://images.unsplash.com/photo-1554605963-c35f2a1b025b?w=800&q=80"
             },
             {
@@ -232,7 +240,6 @@
                 category: "Apple Gear",
                 tag: "20W Fast",
                 desc: "Charges iPhone 50% in 30 mins. Compatible with iPhone 11-14.",
-                // Lightning connector
                 image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=800&q=80"
             }
         ];
@@ -247,12 +254,11 @@
             // Tag Logic
             let tagHTML = '';
             if(product.tag) {
-                // Different colors for different tags
                 const tagColor = product.tag === 'Best Seller' ? 'bg-yellow-400 text-yellow-900' : 'bg-cyan-500 text-white';
                 tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
 
-            // Fallback Image (If URL breaks, this grey box shows)
+            // Fallback Image
             const fallbackImage = "https://placehold.co/600x400/e2e8f0/94a3b8?text=Product+Image";
 
             card.innerHTML = `
