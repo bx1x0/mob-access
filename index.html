@@ -3,213 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNest | Premium Mobile Accessories</title>
+    <title>GadgetsGuru | Premium Mobile Accessories</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Outfit', sans-serif; }
         
-        /* Professional Gradient */
+        /* Corporate Gradient */
         .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #0e7490 100%);
         }
         
-        /* Glassmorphism Navbar */
+        /* Glass Navbar */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
         }
 
-        /* Product Card Hover */
+        /* Card Animation */
         .product-card {
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(14, 116, 144, 0.15);
         }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
     <nav class="glass-nav fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="bg-blue-900 text-white p-2 rounded-lg">
-                        <i class="fa-solid fa-layer-group text-lg"></i>
+                    <div class="relative">
+                        <i class="fa-solid fa-bolt text-3xl text-cyan-600"></i>
+                        <i class="fa-solid fa-mobile-screen absolute -bottom-1 -right-1 text-slate-800 text-sm bg-white rounded-full border border-white"></i>
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-slate-900">TechNest</span>
+                    <div class="flex flex-col leading-none">
+                        <span class="font-bold text-2xl tracking-tight text-slate-900">Gadgets<span class="text-cyan-600">Guru</span></span>
+                        <span class="text-xs text-slate-500 font-medium tracking-wide">STUDENT VENTURE</span>
+                    </div>
                 </div>
                 
-                <div class="hidden md:flex space-x-8">
-                    <a href="#products" class="text-slate-600 hover:text-blue-900 font-medium transition">Catalog</a>
-                    <a href="#features" class="text-slate-600 hover:text-blue-900 font-medium transition">Why Us</a>
-                    <a href="#contact" class="px-5 py-2 rounded-full bg-blue-900 text-white font-medium hover:bg-blue-800 transition shadow-md">
-                        Contact Support
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#products" class="text-slate-600 hover:text-cyan-700 font-medium transition">Catalog</a>
+                    <a href="#about" class="text-slate-600 hover:text-cyan-700 font-medium transition">Mission</a>
+                    <a href="#contact" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-cyan-700 transition shadow-lg shadow-cyan-900/20">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Support
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg text-white pt-32 pb-24 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-800/50 border border-blue-400/30 text-blue-100 text-sm font-semibold mb-6">
-                Student Venture • Zero Overhead • Best Prices
+    <header class="hero-bg text-white pt-40 pb-28 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-cyan-900/50 border border-cyan-400/30 text-cyan-100 text-sm font-semibold mb-6 backdrop-blur-sm">
+                🚀 Launching BSCS Project 2026
             </span>
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-                Premium Audio & Charging <br/> <span class="text-blue-400">Without the Markup.</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
+                Your Tech. <br/> <span class="text-cyan-400">Upgraded.</span>
             </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
-                A student-run project delivering high-quality mobile accessories directly to you. 
-                We cut out the rent costs to give you the lowest market rates.
+            <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-light">
+                GadgetsGuru brings you premium accessories at wholesale rates. 
+                Managed by students, for students. No rent, just savings.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#products" class="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
-                    Browse Shop
+                <a href="#products" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-cyan-50 transition shadow-xl transform hover:scale-105">
+                    Shop Now
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto py-12 px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section id="products" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-                <p class="text-3xl font-bold text-blue-900">100%</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Quality Checked</p>
+                <h2 class="text-4xl font-bold text-slate-900 mb-2">Top Picks</h2>
+                <p class="text-slate-500">Curated by our team for quality and durability.</p>
             </div>
-            <div>
-                <p class="text-3xl font-bold text-blue-900">0%</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Hidden Fees</p>
-            </div>
-            <div>
-                <p class="text-3xl font-bold text-blue-900">24h</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Dispatch Time</p>
-            </div>
-            <div>
-                <p class="text-3xl font-bold text-blue-900">5.0</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Student Rating</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Curated Collection</h2>
-            <div class="w-24 h-1 bg-blue-900 mx-auto rounded-full"></div>
         </div>
         
         <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </section>
 
-    <section id="features" class="bg-slate-900 text-white py-20">
+    <section id="about" class="bg-slate-900 text-white py-24">
         <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Why Choose GadgetsGuru?</h2>
+            </div>
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30">
-                        <i class="fa-solid fa-wallet text-2xl"></i>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <div class="w-14 h-14 bg-cyan-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fa-solid fa-sack-dollar"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Asset-Light Model</h3>
-                    <p class="text-slate-400 leading-relaxed">We don't pay for fancy shops or billboards. We invest only in product quality, passing the savings directly to you.</p>
+                    <h3 class="text-xl font-bold mb-3">Wholesale Prices</h3>
+                    <p class="text-slate-400">We operate with a Zero-Overhead model. No shop rent means you pay for the product, not the electricity bill.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-500/30">
-                        <i class="fa-solid fa-shield-check text-2xl"></i>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <div class="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fa-solid fa-microscope"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Manually Tested</h3>
-                    <p class="text-slate-400 leading-relaxed">Every single cable and earbud is opened and tested by our BSCS team before it's listed here.</p>
+                    <h3 class="text-xl font-bold mb-3">Quality Lab</h3>
+                    <p class="text-slate-400">Every cable is tested for charging speed. Every earbud is checked for bass. If it fails, we don't sell it.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Direct Support</h3>
-                    <p class="text-slate-400 leading-relaxed">No bots. No call centers. Chat directly with the founders via WhatsApp for instant orders.</p>
+                    <h3 class="text-xl font-bold mb-3">Instant Chat</h3>
+                    <p class="text-slate-400">Order directly through WhatsApp. It's fast, personal, and you talk to a real human (us!).</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-white mb-6">Ready to upgrade your gear?</h2>
-            <p class="mb-8">University Project • BSCS Semester 5 • Session 2026</p>
-            <div class="flex justify-center gap-6 text-2xl">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <div class="flex items-center gap-2 mb-6 text-white">
+                <i class="fa-solid fa-bolt text-cyan-500"></i>
+                <span class="font-bold text-xl">GadgetsGuru</span>
             </div>
-            <p class="mt-8 text-sm opacity-60">&copy; 2026 TechNest. All rights reserved.</p>
+            <p class="mb-8 text-center text-sm opacity-70">A project by BSCS 5th Semester Group<br>Building the future of student entrepreneurship.</p>
+            <div class="flex justify-center gap-8 text-2xl">
+                <a href="#" class="hover:text-cyan-400 transition transform hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-pink-500 transition transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-green-500 transition transform hover:-translate-y-1"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="mt-8 text-xs opacity-50">&copy; 2026 GadgetsGuru. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         // --- CONFIGURATION ---
-        const WHATSAPP_NUMBER = "923185662650"; // User's Verified Number
+        const WHATSAPP_NUMBER = "923185662650"; // User's Number
 
-        // --- PRODUCT DATABASE (Updated with Specific Items) ---
+        // --- PRODUCT DATABASE (Images fixed for reliability) ---
         const products = [
             {
                 id: 1,
-                name: "AirPods 2nd Gen (Replica)",
+                name: "AirPods 2nd Gen (Premium)",
                 price: "2,500 PKR",
-                category: "Audio",
+                category: "Wireless Audio",
                 tag: "Best Seller",
-                desc: "High-fidelity audio, auto-connect, 24h battery case. 1:1 design match.",
-                image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07afe?w=600&auto=format&fit=crop&q=80"
+                desc: "1:1 size replica. Auto-connect, 24h battery case, deep bass.",
+                // White Earbuds Case on table
+                image: "https://images.unsplash.com/photo-1588156979435-379b9d802b0a?w=800&auto=format&fit=crop&q=80"
             },
             {
                 id: 2,
-                name: "Eurorex Data Cable (Type-C)",
+                name: "Eurorex Cable (Type-C)",
                 price: "450 PKR",
-                category: "Cables",
-                tag: "Fast Charging",
-                desc: "Heavy duty 6A braided cable. Supports Turbo Charge for Samsung/Xiaomi.",
-                image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=600&auto=format&fit=crop&q=80"
+                category: "Charging",
+                tag: "Fast Charge",
+                desc: "Heavy duty braided cable. Supports Turbo Charge for Samsung/Xiaomi.",
+                // Detailed Cable Shot
+                image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=800&auto=format&fit=crop&q=80"
             },
             {
                 id: 3,
-                name: "Eurorex Data Cable (Micro-USB)",
+                name: "Eurorex Cable (Micro-USB)",
                 price: "350 PKR",
-                category: "Cables",
+                category: "Charging",
                 tag: "Durable",
-                desc: "Reinforced connectors for Android devices. Long-lasting build.",
-                image: "https://images.unsplash.com/photo-1614912852277-2868297b98ab?w=600&auto=format&fit=crop&q=80"
+                desc: "Reinforced rubber connectors for older Androids. Tangle-free.",
+                // Coiled Cable
+                image: "https://images.unsplash.com/photo-1614912852277-2868297b98ab?w=800&auto=format&fit=crop&q=80"
             },
             {
                 id: 4,
                 name: "Pro Wireless Buds (Matte Black)",
                 price: "1,800 PKR",
-                category: "Audio",
+                category: "Wireless Audio",
                 tag: "New Arrival",
-                desc: "Stealth look. Deep bass profile with noise isolation fitting.",
-                image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=600&auto=format&fit=crop&q=80"
+                desc: "Stealth matte black finish. Noise isolation and sweat proof.",
+                // Black Earbuds in case
+                image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=800&auto=format&fit=crop&q=80"
             },
             {
                 id: 5,
                 name: "Single Ear Bluetooth Headset",
                 price: "950 PKR",
-                category: "Audio",
+                category: "Business Audio",
                 tag: "For Driving",
-                desc: "Crystal clear mic for calls. Perfect for driving or office use.",
-                image: "https://images.unsplash.com/photo-1631857500125-9988db257121?w=600&auto=format&fit=crop&q=80"
+                desc: "Crystal clear mic for calls. Perfect for driving, riders, or office.",
+                // Business Headset / Earpiece style
+                image: "https://images.unsplash.com/photo-1554605963-c35f2a1b025b?w=800&auto=format&fit=crop&q=80"
             },
             {
                 id: 6,
-                name: "Type-C to iPhone (PD Lightning)",
+                name: "iPhone PD Cable (Type-C to Lightning)",
                 price: "850 PKR",
-                category: "Cables",
+                category: "Apple Gear",
                 tag: "20W PD",
-                desc: "Enable Fast Charging (0-50% in 30 mins) for iPhone X/11/12/13/14.",
-                image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=600&auto=format&fit=crop&q=80"
+                desc: "Enable 0-50% fast charging in 30 mins for iPhone 11/12/13/14.",
+                // Lightning Cable Connector
+                image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=800&auto=format&fit=crop&q=80"
             }
         ];
 
@@ -218,37 +223,38 @@
 
         products.forEach(product => {
             const card = document.createElement('div');
-            card.className = "product-card bg-white rounded-2xl border border-slate-100 overflow-hidden relative flex flex-col h-full";
+            card.className = "product-card bg-white rounded-2xl border border-slate-100 overflow-hidden relative flex flex-col h-full group";
             
             // Tag Logic
             let tagHTML = '';
             if(product.tag) {
-                const tagColor = product.tag === 'Best Seller' ? 'bg-amber-100 text-amber-800' : 'bg-blue-100 text-blue-800';
-                tagHTML = `<span class="absolute top-4 right-4 ${tagColor} text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">${product.tag}</span>`;
+                const tagColor = product.tag === 'Best Seller' ? 'bg-amber-100 text-amber-800' : 'bg-cyan-100 text-cyan-800';
+                tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">${product.tag}</span>`;
             }
 
             card.innerHTML = `
                 ${tagHTML}
-                <div class="h-56 overflow-hidden bg-slate-50 relative group">
+                <div class="h-64 overflow-hidden bg-slate-100 relative">
                     <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-300"></div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition duration-300"></div>
                 </div>
                 
                 <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-2">
-                        <div>
-                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">${product.category}</span>
-                            <h3 class="font-bold text-lg text-slate-900 leading-tight mt-1">${product.name}</h3>
-                        </div>
+                    <div class="mb-3">
+                        <span class="text-xs text-cyan-600 uppercase tracking-wider font-bold">${product.category}</span>
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight mt-1 group-hover:text-cyan-700 transition">${product.name}</h3>
                     </div>
                     
                     <p class="text-slate-500 text-sm mb-6 line-clamp-2">${product.desc}</p>
                     
-                    <div class="mt-auto flex items-center justify-between gap-4">
-                        <span class="text-xl font-bold text-slate-900">${product.price}</span>
+                    <div class="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-4">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-slate-400">Price</span>
+                            <span class="text-xl font-bold text-slate-900">${product.price}</span>
+                        </div>
                         <button onclick="orderItem('${product.name}', '${product.price}')" 
-                            class="flex-1 bg-blue-900 hover:bg-blue-800 text-white font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md active:scale-95">
-                            <i class="fa-brands fa-whatsapp"></i> Buy Now
+                            class="bg-slate-900 hover:bg-cyan-600 text-white font-medium py-2.5 px-5 rounded-xl flex items-center gap-2 transition shadow-md active:scale-95">
+                            <i class="fa-brands fa-whatsapp"></i> Buy
                         </button>
                     </div>
                 </div>
@@ -258,7 +264,7 @@
 
         // --- WHATSAPP FUNCTION ---
         function orderItem(name, price) {
-            const text = `Hello TechNest! I am interested in buying: *${name}* for *${price}*. Is this available for delivery?`;
+            const text = `Hello GadgetsGuru! I want to order: *${name}* - *${price}*. Is it available?`;
             const encodedText = encodeURIComponent(text);
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
             window.open(url, '_blank');
