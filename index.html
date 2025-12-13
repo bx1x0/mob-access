@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Accessories Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom "Tech" Gradient */
+        .tech-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-microchip text-blue-600 text-2xl"></i>
+                    <span class="font-bold text-xl text-gray-800">TechNest Accessories</span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-gray-600">
+                    <a href="#products" class="hover:text-blue-600">Products</a>
+                    <a href="#about" class="hover:text-blue-600">Our Mission</a>
+                    <a href="#contact" class="hover:text-blue-600">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-gradient text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Premium Mobile Gear. Student Prices.</h1>
+            <p class="text-lg md:text-xl opacity-90 mb-8">Quality checked by BSCS Students. Zero Delivery Fees on Campus.</p>
+            <a href="#products" class="bg-white text-blue-800 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg">
+                View Catalog
+            </a>
+        </div>
+    </header>
+
+    <section id="products" class="py-16 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Latest Arrivals</h2>
+        
+        <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
+
+    <section id="about" class="bg-gray-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Why Buy From Us?</h2>
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <div class="p-6 border border-gray-700 rounded-lg">
+                    <i class="fa-solid fa-hand-holding-dollar text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Zero Markup</h3>
+                    <p class="text-gray-400">We use a zero-overhead model (No Rent) to pass savings to you.</p>
+                </div>
+                <div class="p-6 border border-gray-700 rounded-lg">
+                    <i class="fa-solid fa-check-double text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Tested Quality</h3>
+                    <p class="text-gray-400">Every cable is manually tested by our team before listing.</p>
+                </div>
+                <div class="p-6 border border-gray-700 rounded-lg">
+                    <i class="fa-brands fa-whatsapp text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Direct Support</h3>
+                    <p class="text-gray-400">Instant ordering via WhatsApp. No complex signups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center">
+        <p>&copy; 2026 TechNest Group. Built by BSCS Semester 5.</p>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION ---
+        const WHATSAPP_NUMBER = "923000000000"; // <--- CHANGE THIS TO YOUR NUMBER (Format: 923...)
+        
+        // --- PRODUCT DATABASE ---
+        // Add your real products here. Images are placeholders.
+        const products = [
+            {
+                id: 1,
+                name: "Fast Charging Cable (Type-C)",
+                price: "350 PKR",
+                desc: "Durable braided cable, supports fast charging for Samsung/Xiaomi.",
+                image: "https://images.unsplash.com/photo-1542887800-faca0261c1e1?w=500&auto=format&fit=crop&q=60" 
+            },
+            {
+                id: 2,
+                name: "Wireless Earbuds (Basic)",
+                price: "1,200 PKR",
+                desc: "Great bass, 4-hour battery life. Perfect for students.",
+                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=60"
+            },
+            {
+                id: 3,
+                name: "iPhone Lightning Cable",
+                price: "400 PKR",
+                desc: "High speed data transfer and charging compatible with iPhone X-14.",
+                image: "https://images.unsplash.com/photo-1605406323635-42358f2762e6?w=500&auto=format&fit=crop&q=60"
+            },
+            {
+                id: 4,
+                name: "Universal Travel Adapter",
+                price: "550 PKR",
+                desc: "Compact adapter for all your devices.",
+                image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&auto=format&fit=crop&q=60"
+            },
+             {
+                id: 5,
+                name: "Gaming Handfree",
+                price: "800 PKR",
+                desc: "Noise cancellation with mic. Good for PUBG/COD.",
+                image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f7?w=500&auto=format&fit=crop&q=60"
+            }
+        ];
+
+        // --- RENDER PRODUCTS ---
+        const container = document.getElementById('product-container');
+
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1";
+            
+            card.innerHTML = `
+                <div class="h-48 overflow-hidden bg-gray-200">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-lg text-gray-800">${product.name}</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full">${product.price}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">${product.desc}</p>
+                    <button onclick="orderItem('${product.name}', '${product.price}')" 
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp"></i> Buy on WhatsApp
+                    </button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        // --- WHATSAPP LOGIC ---
+        function orderItem(name, price) {
+            // Create the message
+            const text = `Hello! I saw your website and I want to order: *${name}* for *${price}*. Is it available?`;
+            
+            // Encode for URL
+            const encodedText = encodeURIComponent(text);
+            
+            // Open WhatsApp
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
