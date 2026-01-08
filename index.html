@@ -19,9 +19,7 @@
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .thumb-active { border-color: #0891b2; opacity: 1; }
         
-        /* Zoom Modal Animation */
         #zoom-modal { transition: opacity 0.3s ease; }
         #zoom-modal.hidden { opacity: 0; pointer-events: none; }
         #zoom-modal.flex { opacity: 1; pointer-events: auto; }
@@ -126,7 +124,6 @@
         const WHATSAPP_NUMBER = "923185662650"; 
 
         const products = [
-            // --- CABLES ---
             {
                 id: 1,
                 name: "MediaNet MC-98 Type-C Cable",
@@ -139,7 +136,7 @@
             {
                 id: 2,
                 name: "USB-C to Lightning PD (1m)",
-                price: "420 PKR",
+                price: "1050 PKR", // Updated
                 category: "Apple Gear",
                 tag: "20W Fast",
                 desc: "Supports 0-50% fast charging in 30 mins for iPhone 11-14.",
@@ -181,12 +178,10 @@
                 desc: "Type-C to Type-C. Supports 67W fast charging for laptops.",
                 images: ["images/geman-c.jpg"]
             },
-
-            // --- HANDSFREE (WIRED) ---
             {
                 id: 7,
                 name: "YSDBBC B5 Super Bass",
-                price: "450 PKR",
+                price: "190 PKR", // Updated
                 category: "Audio",
                 tag: "HiFi Sound",
                 desc: "Ergonomic design with vocal channels. Deep bass response.",
@@ -195,7 +190,7 @@
             {
                 id: 8,
                 name: "PAPADA PA201 Earphones",
-                price: "450 PKR",
+                price: "210 PKR", // Updated
                 category: "Audio",
                 tag: "Hi-Res Audio",
                 desc: "Humanized design. 3.5mm jack. Metallic finish with Super Bass.",
@@ -210,12 +205,10 @@
                 desc: "Comfortable to wear with multi-device compatibility.",
                 images: ["images/erorex-y03.jpg"]
             },
-
-            // --- WIRELESS AUDIO & SPEAKERS ---
             {
                 id: 10,
                 name: "KBroad KTS-2295 Party Speaker",
-                price: "2,200 PKR",
+                price: "1000 PKR", // Updated
                 category: "Speakers",
                 tag: "Flashlight",
                 desc: "Portable wireless speaker with carry strap and powerful torch light. Big Sound.",
@@ -224,13 +217,13 @@
             {
                 id: 11,
                 name: "JBL M3-T Mini Speaker",
-                price: "650 PKR",
+                price: "130 PKR", // Updated
                 category: "Speakers",
                 tag: "Pocket Size",
                 desc: "Mini portable bluetooth speaker. Metal body with surprising bass.",
                 images: ["images/jbl-box.jpg", "images/jbl-real.jpg"]
             },
-             {
+            {
                 id: 12,
                 name: "Music Mini Speaker (Silver)",
                 price: "650 PKR",
@@ -242,7 +235,7 @@
             {
                 id: 13,
                 name: "Lenovo Hanging Neckband",
-                price: "800 PKR",
+                price: "550 PKR", // Updated
                 category: "Wireless",
                 tag: "Sports",
                 desc: "Magnetic earbuds with long battery life. Perfect for gym and running.",
@@ -260,7 +253,7 @@
             {
                 id: 15,
                 name: "Air31 Crystal Headset",
-                price: "2,000 PKR",
+                price: "550 PKR", // Updated
                 category: "Wireless",
                 tag: "Digital Display",
                 desc: "Transparent casing with LED battery display. Noise reduction technology.",
@@ -269,7 +262,7 @@
             {
                 id: 16,
                 name: "Air39 ENC Wireless Buds",
-                price: "2,000 PKR",
+                price: "670 PKR", // Updated
                 category: "Wireless",
                 tag: "ENC Mic",
                 desc: "Transparent black design with Environmental Noise Cancellation.",
@@ -287,7 +280,7 @@
             {
                 id: 18,
                 name: "Wireless Super Bass PW-22",
-                price: "1,500 PKR",
+                price: "750 PKR", // Updated
                 category: "Wireless",
                 tag: "Free Case",
                 desc: "14.3mm Titanium driver. Includes free silicone cover.",
@@ -307,7 +300,6 @@
                 tagHTML = `<span class="absolute top-4 left-4 ${tagColor} text-[10px] uppercase font-bold px-3 py-1 rounded-full z-10 shadow-sm tracking-wide">${product.tag}</span>`;
             }
 
-            // Image HTML with OnClick Zoom trigger
             let imageHTML = `
                 <div class="cursor-zoom-in w-full h-full p-4" onclick="openZoom('${product.images[0]}')">
                     <img id="img-${product.id}" src="${product.images[0]}" 
@@ -359,9 +351,6 @@
             container.appendChild(card);
         });
 
-        // --- FUNCTIONS ---
-
-        // Zoom Functions
         function openZoom(src) {
             const modal = document.getElementById('zoom-modal');
             const zoomImg = document.getElementById('zoom-img');
@@ -376,13 +365,9 @@
             modal.classList.remove('flex');
         }
 
-        // Change Slider Image (and update Zoom target)
         window.changeImage = function(id, src, thumb) {
             const mainImg = document.getElementById(`img-${id}`);
-            
-            // Update the click target for zoom
             mainImg.parentElement.setAttribute('onclick', `openZoom('${src}')`);
-
             mainImg.style.opacity = '0';
             setTimeout(() => {
                 mainImg.src = src;
